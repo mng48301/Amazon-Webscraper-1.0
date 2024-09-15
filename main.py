@@ -15,15 +15,12 @@ rating_data = []
 
 def webscrape(prompt):
     
-
-    PATH = r"C:\Users\mng48\source\repos\tools\chrome driver"
-    service = Service(PATH)
-    driver = webdriver.Chrome(service=service)
+    driver = webdriver.Chrome()
     driver.maximize_window()
 
     #prompt search
     driver.get("https://www.amazon.com/")
-    sleep(2)
+    sleep(5)
     searchbox = driver.find_element(By.CSS_SELECTOR, "#twotabsearchtextbox")
     sleep(1)
     searchbox.click()
@@ -128,4 +125,3 @@ print("version 1.0\n")
 prompt = input("Enter prompt: ")
 
 webscrape(prompt)
-
